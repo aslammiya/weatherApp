@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <title>Weather</title>
+  </head>
+  <body>
+
+
+
+{% if messages %}
+{% for message in messages %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+{% endfor %}
+{% endif %}
+    <form class="mx-4" method="post" action="/">
+        {% csrf_token %}
+        <div class="mb-3">
+          <label for="text" class="form-label">Location</label>
+          <input type="text" name="location" class="form-control" id="Location">
+        </div>
+        <button type="submit" class="btn btn-primary ">Submit</button>
+      </form>
+        {{temp}}
+        {{temp_f}}
+        {{last_updated}}
+        {{name}}
+        {{region}}
+        {{country}}
+        {{localtime}}
+  </body>
+</html>
