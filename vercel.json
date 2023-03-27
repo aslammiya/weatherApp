@@ -1,13 +1,13 @@
 {
     "builds": [{
-        "src": "weatherApp/wsgi.py",
+        "src": "weatherApp/wetaher/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "weatherApp/wsgi.py"
+            "dest": "weatherApp/wetaher/wsgi.py"
         }
     ]
 }
